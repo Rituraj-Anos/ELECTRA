@@ -1,19 +1,22 @@
-/* ═══════════════════════════════════════════════════════════════════
-   ELECTRA — API Client
-   ═══════════════════════════════════════════════════════════════════ */
+import { getAuthToken } from "./firebase";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
 
 async function apiFetch(path: string, opts: RequestInit = {}) {
+  const token = await getAuthToken();
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { "Content-Type": "application/json", ...(opts.headers as Record<string, string>) },
+    headers: {
+      "Content-Type": "application/json",
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      ...(opts.headers as Record<string, string>),
+    },
     ...opts,
   });
-  if (!res.ok) throw new Error(`API ${res.status}: ${res.statusText}`);
+  if (!res.ok) throw new Error(`Request failed: ${res.status}`);
   return res.json();
 }
 
-/* ── Chat (SSE streaming) ─────────────────────────────────────────── */
+/* ── Chat (SSE streaming) ── */
 export async function streamChat(
   messages: { role: string; content: string }[],
   sessionId: string,
@@ -23,9 +26,13 @@ export async function streamChat(
   onError?: (err: string) => void,
 ) {
   try {
+    const token = await getAuthToken();
     const res = await fetch(`${API_BASE}/chat`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
       body: JSON.stringify({ messages, sessionId, moduleContext }),
     });
 
@@ -41,11 +48,9 @@ export async function streamChat(
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
-
       buffer += decoder.decode(value, { stream: true });
       const lines = buffer.split("\n");
       buffer = lines.pop() || "";
-
       for (const line of lines) {
         if (line.startsWith("data: ")) {
           const data = line.slice(6);
@@ -68,44 +73,45 @@ export async function streamChat(
   }
 }
 
-/* ── Modules ──────────────────────────────────────────────────────── */
+/* ── Modules ── */
 export function fetchModules(country?: string) {
-  const q = country ? `?country=${country}` : "";
-  return apiFetch(`/modules${q}`);
+  return apiFetch(`/modules${country ? `?country=${country}` : ""}`);
 }
-
 export function fetchModule(id: string) {
   return apiFetch(`/modules/${id}`);
 }
 
-/* ── Quiz ─────────────────────────────────────────────────────────── */
+/* ── Quiz ── */
 export function fetchQuiz(moduleId: string) {
   return apiFetch(`/quiz/${moduleId}`);
 }
-
-export function submitQuiz(sessionId: string, moduleId: string, answers: { questionId: string; selectedAnswer: string }[]) {
+export function submitQuiz(
+  sessionId: string,
+  moduleId: string,
+  answers: { questionId: string; selectedAnswer: string }[],
+) {
   return apiFetch(`/quiz/${moduleId}/submit`, {
     method: "POST",
     body: JSON.stringify({ sessionId, answers }),
   });
 }
 
-/* ── Timeline ─────────────────────────────────────────────────────── */
+/* ── Timeline ── */
 export function fetchTimeline(country: string) {
   return apiFetch(`/timeline?country=${encodeURIComponent(country)}`);
 }
 
-/* ── Glossary ─────────────────────────────────────────────────────── */
+/* ── Glossary ── */
 export function fetchGlossary() {
   return apiFetch("/glossary");
 }
 
-/* ── Polling ──────────────────────────────────────────────────────── */
+/* ── Polling ── */
 export function searchPolling(address: string) {
   return apiFetch(`/polling?address=${encodeURIComponent(address)}`);
 }
 
-/* ── Translation ──────────────────────────────────────────────────── */
+/* ── Translation ── */
 export function translateText(text: string, targetLang: string) {
   return apiFetch("/translate", {
     method: "POST",
@@ -113,7 +119,7 @@ export function translateText(text: string, targetLang: string) {
   });
 }
 
-/* ── TTS ──────────────────────────────────────────────────────────── */
+/* ── TTS ── */
 export function synthesizeSpeech(text: string, lang?: string) {
   return apiFetch("/tts", {
     method: "POST",
