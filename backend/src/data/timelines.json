@@ -1,0 +1,31 @@
+{
+  "US_presidential": [
+    {"id":"us-p1","title":"Primary Season Begins","description":"State primaries and caucuses begin to select each party's presidential nominee.","dateRange":"January - June (Election Year)","category":"campaigning","status":"upcoming","order":1},
+    {"id":"us-p2","title":"National Conventions","description":"Each major party holds a convention to formally nominate their presidential and vice-presidential candidates.","dateRange":"July - August","category":"campaigning","status":"upcoming","order":2},
+    {"id":"us-p3","title":"General Election Campaign","description":"Nominated candidates campaign nationwide with debates, rallies, and advertising.","dateRange":"September - November","category":"campaigning","status":"upcoming","order":3},
+    {"id":"us-p4","title":"Voter Registration Deadline","description":"Most states require registration 15-30 days before Election Day. Some allow same-day registration.","dateRange":"October","category":"registration","status":"upcoming","order":4},
+    {"id":"us-p5","title":"Early Voting Period","description":"Many states allow in-person early voting 1-2 weeks before Election Day.","dateRange":"Late October - Early November","category":"voting","status":"upcoming","order":5},
+    {"id":"us-p6","title":"Election Day","description":"The first Tuesday after the first Monday in November. Polls typically open 6-7 AM and close 7-8 PM.","dateRange":"First Tuesday after first Monday in November","category":"voting","status":"upcoming","order":6},
+    {"id":"us-p7","title":"Vote Counting","description":"Ballots are counted. Some states report quickly; mail-in ballots may take days to process.","dateRange":"Election Day - Days After","category":"counting","status":"upcoming","order":7},
+    {"id":"us-p8","title":"Electoral College Vote","description":"Electors meet in state capitals to cast their electoral votes for president.","dateRange":"December (first Monday after second Wednesday)","category":"certification","status":"upcoming","order":8},
+    {"id":"us-p9","title":"Congressional Certification","description":"Congress meets in joint session to count and certify electoral votes.","dateRange":"January 6","category":"certification","status":"upcoming","order":9},
+    {"id":"us-p10","title":"Inauguration Day","description":"The new president is sworn into office on the steps of the U.S. Capitol.","dateRange":"January 20","category":"certification","status":"upcoming","order":10}
+  ],
+  "UK_general": [
+    {"id":"uk-g1","title":"Parliament Dissolved","description":"Parliament is dissolved, triggering the official election period of approximately 5 weeks.","dateRange":"5 weeks before Election Day","category":"campaigning","status":"upcoming","order":1},
+    {"id":"uk-g2","title":"Candidate Nominations Close","description":"Candidates must submit nomination papers with required deposits and signatures.","dateRange":"19 working days before Election Day","category":"registration","status":"upcoming","order":2},
+    {"id":"uk-g3","title":"Voter Registration Deadline","description":"Last day to register to vote at gov.uk/register-to-vote.","dateRange":"12 working days before Election Day","category":"registration","status":"upcoming","order":3},
+    {"id":"uk-g4","title":"Campaign Period","description":"Parties campaign across constituencies. Leaders participate in televised debates.","dateRange":"5-week campaign period","category":"campaigning","status":"upcoming","order":4},
+    {"id":"uk-g5","title":"Polling Day","description":"Voters cast ballots at local polling stations from 7 AM to 10 PM.","dateRange":"Thursday (by convention)","category":"voting","status":"upcoming","order":5},
+    {"id":"uk-g6","title":"Overnight Count","description":"Votes are counted overnight with results declared constituency by constituency.","dateRange":"Polling Day night into early morning","category":"counting","status":"upcoming","order":6},
+    {"id":"uk-g7","title":"Government Formation","description":"The party or coalition with a majority is invited by the Monarch to form a government.","dateRange":"Day after Polling Day","category":"certification","status":"upcoming","order":7}
+  ],
+  "IN_general": [
+    {"id":"in-g1","title":"Election Schedule Announced","description":"The Election Commission of India announces dates for the multi-phase general election.","dateRange":"6-8 weeks before voting begins","category":"registration","status":"upcoming","order":1},
+    {"id":"in-g2","title":"Nomination Period","description":"Candidates file nominations in their respective constituencies with required deposits.","dateRange":"Several weeks before each phase","category":"registration","status":"upcoming","order":2},
+    {"id":"in-g3","title":"Campaign Period","description":"Intensive campaigning with rallies, door-to-door canvassing, and media blitzes.","dateRange":"Weeks before each voting phase","category":"campaigning","status":"upcoming","order":3},
+    {"id":"in-g4","title":"Multi-Phase Voting","description":"Voting occurs in 5-7 phases across different states to allow security forces to be deployed.","dateRange":"Over 4-6 weeks","category":"voting","status":"upcoming","order":4},
+    {"id":"in-g5","title":"Counting Day","description":"All votes across all phases are counted simultaneously on a single day.","dateRange":"Days after final voting phase","category":"counting","status":"upcoming","order":5},
+    {"id":"in-g6","title":"Results Declaration","description":"The Election Commission declares results and the winning party/coalition is invited to form government.","dateRange":"Counting Day","category":"certification","status":"upcoming","order":6}
+  ]
+}

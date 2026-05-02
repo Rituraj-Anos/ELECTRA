@@ -1,0 +1,207 @@
+[
+  {
+    "id": "voter-registration",
+    "title": "Voter Registration",
+    "description": "Learn about eligibility requirements, registration deadlines, and how to register to vote in your area.",
+    "country": "ALL",
+    "order": 1,
+    "estimatedMinutes": 8,
+    "content": [
+      { "type": "heading", "text": "Who Can Vote?" },
+      { "type": "body", "text": "In most democracies, citizens who have reached the legal voting age (typically 18) are eligible to vote. Some countries also allow non-citizen residents to vote in local elections. Requirements generally include citizenship, age, residency in the voting district, and not being legally disqualified (such as through certain criminal convictions, depending on jurisdiction)." },
+      { "type": "callout", "text": "Key Term: Electoral Roll — The official list of people eligible to vote in a particular area. You must be on this list to cast a ballot on Election Day." },
+      { "type": "heading", "text": "How to Register" },
+      { "type": "steps", "items": ["Check your eligibility based on age, citizenship, and residency requirements", "Gather required documents such as government-issued ID, proof of address, or social security number", "Complete the registration form online, by mail, or in person at your local election office", "Submit before the registration deadline — typically 15-30 days before Election Day", "Verify your registration status through your election authority's website"] },
+      { "type": "note", "text": "Many jurisdictions now offer online voter registration. In the US, visit vote.gov. In the UK, visit gov.uk/register-to-vote. In India, visit nvsp.in." },
+      { "type": "heading", "text": "Registration Deadlines" },
+      { "type": "body", "text": "Deadlines vary significantly by country and even by state or province. Some jurisdictions allow same-day registration, while others require registration weeks in advance. Always check your local election authority's website for specific deadlines." },
+      { "type": "heading", "text": "ID Requirements" },
+      { "type": "body", "text": "Voter ID laws differ worldwide. Some countries require photo ID at the polls, while others use signature verification or voter registration cards. Know what identification you'll need before Election Day to avoid any issues at the polling station." }
+    ],
+    "quizQuestions": [
+      { "id": "vr-q1", "question": "What is the most common minimum voting age worldwide?", "type": "multiple-choice", "options": ["16", "18", "21", "25"], "correctAnswer": "18", "explanation": "The most common minimum voting age globally is 18 years old, though some countries like Austria, Brazil, and Scotland allow voting at 16." },
+      { "id": "vr-q2", "question": "What is an Electoral Roll?", "type": "multiple-choice", "options": ["A type of ballot paper", "The official list of eligible voters", "A voting machine", "An election committee"], "correctAnswer": "The official list of eligible voters", "explanation": "The Electoral Roll (also called voter register) is the official list of all people eligible to vote in an area." },
+      { "id": "vr-q3", "question": "True or False: All countries require photo ID to vote.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "ID requirements vary by country. Some use signature verification, voter cards, or even ink-stained fingers." },
+      { "id": "vr-q4", "question": "When should you typically register to vote before an election?", "type": "multiple-choice", "options": ["The day of the election", "15-30 days before", "6 months before", "1 year before"], "correctAnswer": "15-30 days before", "explanation": "Most jurisdictions require registration 15-30 days before Election Day, though some allow same-day registration." },
+      { "id": "vr-q5", "question": "Which of these is NOT typically required for voter registration?", "type": "multiple-choice", "options": ["Proof of citizenship", "Proof of age", "A college degree", "Proof of residency"], "correctAnswer": "A college degree", "explanation": "Voter registration typically requires proof of citizenship, age, and residency — never educational qualifications." }
+    ]
+  },
+  {
+    "id": "types-of-elections",
+    "title": "Types of Elections",
+    "description": "Understand the differences between presidential, congressional, local, primary, and referendum elections.",
+    "country": "ALL",
+    "order": 2,
+    "estimatedMinutes": 6,
+    "content": [
+      { "type": "heading", "text": "General Elections" },
+      { "type": "body", "text": "General elections are the main elections where voters choose their representatives for government positions. These include presidential elections, parliamentary elections, and congressional elections depending on the country's system of government." },
+      { "type": "heading", "text": "Primary Elections" },
+      { "type": "body", "text": "Primary elections are preliminary elections where political parties select their candidates for the general election. In the United States, primaries can be open (any registered voter can participate) or closed (only registered party members can vote)." },
+      { "type": "callout", "text": "Key Term: Caucus — An alternative to a primary election where party members gather in person to discuss and vote on candidates through a series of rounds." },
+      { "type": "heading", "text": "Local Elections" },
+      { "type": "body", "text": "Local elections determine leadership at the municipal, county, or district level. These include mayors, city council members, school board officials, and local judges. Despite lower turnout, local elections often have the most direct impact on daily life." },
+      { "type": "heading", "text": "Referendums and Ballot Measures" },
+      { "type": "body", "text": "Referendums allow citizens to vote directly on specific policy questions or constitutional amendments rather than choosing representatives. Examples include Brexit in the UK and various state ballot propositions in the US." }
+    ],
+    "quizQuestions": [
+      { "id": "te-q1", "question": "What is the purpose of a primary election?", "type": "multiple-choice", "options": ["To elect the president", "To select party candidates for the general election", "To amend the constitution", "To elect local officials"], "correctAnswer": "To select party candidates for the general election", "explanation": "Primary elections allow party members to choose which candidate will represent their party in the general election." },
+      { "id": "te-q2", "question": "What is a referendum?", "type": "multiple-choice", "options": ["A type of primary election", "A direct vote on a specific policy question", "A recount process", "A campaign event"], "correctAnswer": "A direct vote on a specific policy question", "explanation": "A referendum lets citizens vote directly on policy issues or constitutional changes, bypassing elected representatives." },
+      { "id": "te-q3", "question": "True or False: Local elections typically have higher voter turnout than national elections.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "Local elections generally have lower turnout, despite often having more direct impact on daily life." },
+      { "id": "te-q4", "question": "What is a caucus?", "type": "multiple-choice", "options": ["A type of ballot", "An in-person gathering to select candidates", "A voting machine", "An exit poll"], "correctAnswer": "An in-person gathering to select candidates", "explanation": "A caucus is a meeting where party members discuss and vote on candidates through multiple rounds of deliberation." },
+      { "id": "te-q5", "question": "Which type of election has the most direct impact on your daily life?", "type": "multiple-choice", "options": ["Presidential", "Local", "Primary", "Referendum"], "correctAnswer": "Local", "explanation": "Local elections determine policies on schools, roads, police, zoning, and other services that directly affect daily life." }
+    ]
+  },
+  {
+    "id": "how-voting-works",
+    "title": "How Voting Works",
+    "description": "Learn about polling places, ballot types, absentee voting, mail-in voting, and early voting options.",
+    "country": "ALL",
+    "order": 3,
+    "estimatedMinutes": 10,
+    "content": [
+      { "type": "heading", "text": "At the Polling Station" },
+      { "type": "body", "text": "On Election Day, registered voters go to their assigned polling station. After checking in and verifying identity, voters receive a ballot and proceed to a private voting booth. The secrecy of the ballot is a fundamental democratic principle ensuring voters can make choices free from coercion." },
+      { "type": "steps", "items": ["Arrive at your assigned polling station with required ID", "Check in with poll workers who verify your registration", "Receive your ballot (paper or electronic)", "Mark your choices in a private voting booth", "Submit your completed ballot into the ballot box or scanner", "Receive an 'I Voted' sticker (in many US jurisdictions)"] },
+      { "type": "heading", "text": "Types of Ballots" },
+      { "type": "body", "text": "Paper ballots are marked by hand and counted manually or by optical scanner. Electronic voting machines (DREs) record votes digitally. Some jurisdictions use a hybrid approach with electronic marking and paper verification trails." },
+      { "type": "heading", "text": "Absentee and Mail-In Voting" },
+      { "type": "body", "text": "Absentee voting allows registered voters to cast ballots remotely when unable to visit their polling station. Mail-in voting systems send ballots to all registered voters automatically. Both methods ensure broader participation while maintaining ballot security through verification processes." },
+      { "type": "heading", "text": "Early Voting" },
+      { "type": "body", "text": "Many jurisdictions offer early voting periods, typically 1-2 weeks before Election Day. This reduces congestion at polling stations and gives voters flexibility. Early voting locations and hours vary by jurisdiction." }
+    ],
+    "quizQuestions": [
+      { "id": "hv-q1", "question": "What is the principle of ballot secrecy?", "type": "multiple-choice", "options": ["Ballots are destroyed after counting", "Voters can make choices free from coercion", "Only officials can see the results", "Ballots are encrypted"], "correctAnswer": "Voters can make choices free from coercion", "explanation": "Ballot secrecy ensures no one can see how you voted, protecting you from intimidation or coercion." },
+      { "id": "hv-q2", "question": "What is a DRE voting machine?", "type": "multiple-choice", "options": ["Direct Recording Electronic — records votes digitally", "Democratic Registry Equipment", "Digital Results Engine", "District Record Evaluator"], "correctAnswer": "Direct Recording Electronic — records votes digitally", "explanation": "DRE (Direct Recording Electronic) machines record votes directly into computer memory." },
+      { "id": "hv-q3", "question": "What is the difference between absentee voting and mail-in voting?", "type": "multiple-choice", "options": ["They are the same thing", "Absentee requires a reason; universal mail-in sends ballots to all voters", "Mail-in is only for military", "Absentee is electronic"], "correctAnswer": "Absentee requires a reason; universal mail-in sends ballots to all voters", "explanation": "Traditional absentee voting requires an excuse, while universal mail-in voting automatically sends ballots to all registered voters." },
+      { "id": "hv-q4", "question": "True or False: Early voting is available in all countries.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "Early voting availability varies by country and jurisdiction. Not all democracies offer it." },
+      { "id": "hv-q5", "question": "What should you bring to your polling station?", "type": "multiple-choice", "options": ["Nothing — just show up", "Required identification as specified by your jurisdiction", "Your voter registration card only", "A letter from your employer"], "correctAnswer": "Required identification as specified by your jurisdiction", "explanation": "ID requirements vary — check your local election authority to know exactly what to bring." }
+    ]
+  },
+  {
+    "id": "electoral-systems",
+    "title": "Electoral Systems",
+    "description": "Compare first-past-the-post, proportional representation, ranked-choice, and other voting systems.",
+    "country": "ALL",
+    "order": 4,
+    "estimatedMinutes": 12,
+    "content": [
+      { "type": "heading", "text": "First-Past-the-Post (FPTP)" },
+      { "type": "body", "text": "In FPTP, the candidate with the most votes wins, even without a majority. Used in the US, UK, Canada, and India. It's simple to understand but can lead to outcomes where a candidate wins with less than 50% of the vote and can underrepresent smaller parties." },
+      { "type": "heading", "text": "Proportional Representation (PR)" },
+      { "type": "body", "text": "PR systems allocate seats in proportion to each party's share of the vote. Used across much of Europe. This leads to multiparty systems and coalition governments. Variants include party-list PR and mixed-member proportional systems." },
+      { "type": "heading", "text": "Ranked-Choice Voting (RCV)" },
+      { "type": "body", "text": "Also called instant-runoff voting, RCV lets voters rank candidates in order of preference. If no candidate gets a majority, the lowest-ranked candidate is eliminated and their votes redistributed. Used in Australia and some US cities." },
+      { "type": "callout", "text": "Key Term: Gerrymandering — The manipulation of electoral district boundaries to favor a particular party or group. Named after Massachusetts Governor Elbridge Gerry in 1812." },
+      { "type": "heading", "text": "Electoral College" },
+      { "type": "body", "text": "The US Electoral College is a unique system where voters choose electors who then formally elect the president. Each state gets electors equal to its congressional representation. A candidate needs 270 of 538 electoral votes to win." }
+    ],
+    "quizQuestions": [
+      { "id": "es-q1", "question": "In First-Past-the-Post, what does a candidate need to win?", "type": "multiple-choice", "options": ["A majority (over 50%)", "The most votes (plurality)", "Two-thirds of votes", "Unanimous support"], "correctAnswer": "The most votes (plurality)", "explanation": "FPTP only requires a plurality — the most votes — not necessarily a majority." },
+      { "id": "es-q2", "question": "What is proportional representation?", "type": "multiple-choice", "options": ["Winner takes all", "Seats allocated based on vote share", "Voters rank candidates", "Only two parties compete"], "correctAnswer": "Seats allocated based on vote share", "explanation": "PR allocates legislative seats proportionally to each party's share of the total vote." },
+      { "id": "es-q3", "question": "How many electoral votes are needed to win the US presidency?", "type": "multiple-choice", "options": ["200", "270", "300", "435"], "correctAnswer": "270", "explanation": "A candidate needs 270 out of 538 total electoral votes to win the US presidency." },
+      { "id": "es-q4", "question": "What happens in ranked-choice voting when no candidate has a majority?", "type": "multiple-choice", "options": ["A runoff election is held", "The lowest candidate is eliminated and votes redistributed", "The election is voided", "The incumbent wins"], "correctAnswer": "The lowest candidate is eliminated and votes redistributed", "explanation": "In RCV, the candidate with fewest votes is eliminated, and their voters' second choices are redistributed." },
+      { "id": "es-q5", "question": "What is gerrymandering?", "type": "multiple-choice", "options": ["A type of ballot", "Manipulating district boundaries for political advantage", "A voting machine brand", "A campaign strategy"], "correctAnswer": "Manipulating district boundaries for political advantage", "explanation": "Gerrymandering draws electoral districts to give one party an unfair advantage." }
+    ]
+  },
+  {
+    "id": "election-timeline",
+    "title": "The Election Timeline",
+    "description": "Follow the journey from campaign period through Election Day, counting, and certification.",
+    "country": "ALL",
+    "order": 5,
+    "estimatedMinutes": 8,
+    "content": [
+      { "type": "heading", "text": "The Campaign Period" },
+      { "type": "body", "text": "Campaigns typically begin months or even years before Election Day. Candidates announce their intentions, build organizations, raise funds, participate in debates, and communicate their platforms to voters through advertising, rallies, and media appearances." },
+      { "type": "heading", "text": "Pre-Election Period" },
+      { "type": "body", "text": "In the weeks before an election, voter registration closes, early voting may begin, and election officials prepare polling stations, train poll workers, and test voting equipment. Media blackout periods may apply in some countries." },
+      { "type": "heading", "text": "Election Day" },
+      { "type": "body", "text": "Polling stations open (typically 7AM-8PM), voters cast ballots, observers monitor the process, and media outlets begin exit polling. In many countries, campaigning is prohibited on Election Day itself." },
+      { "type": "heading", "text": "Counting and Certification" },
+      { "type": "body", "text": "After polls close, counting begins. This can take hours, days, or weeks depending on the system. Results go through verification, potential recounts, and formal certification by election authorities before being declared official." }
+    ],
+    "quizQuestions": [
+      { "id": "et-q1", "question": "What typically happens first in the election timeline?", "type": "multiple-choice", "options": ["Counting votes", "Campaign announcements", "Certification", "Early voting"], "correctAnswer": "Campaign announcements", "explanation": "The election process begins with candidates announcing their campaigns, often months before Election Day." },
+      { "id": "et-q2", "question": "True or False: Campaigning is allowed inside polling stations on Election Day in most countries.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "Most countries prohibit campaigning at or near polling stations on Election Day to prevent voter intimidation." },
+      { "id": "et-q3", "question": "What is an exit poll?", "type": "multiple-choice", "options": ["A poll taken before the election", "A survey of voters as they leave the polling station", "A recount procedure", "A type of ballot"], "correctAnswer": "A survey of voters as they leave the polling station", "explanation": "Exit polls survey voters immediately after they vote to project results before official counting is complete." },
+      { "id": "et-q4", "question": "What is certification?", "type": "multiple-choice", "options": ["Training poll workers", "Officially confirming election results", "Registering voters", "Counting absentee ballots"], "correctAnswer": "Officially confirming election results", "explanation": "Certification is the formal process where election authorities verify and officially declare election results." },
+      { "id": "et-q5", "question": "How long can vote counting take?", "type": "multiple-choice", "options": ["Always finishes on Election Day", "Hours to weeks depending on the system", "Exactly 24 hours", "One month minimum"], "correctAnswer": "Hours to weeks depending on the system", "explanation": "Counting time varies — some results are known election night, while mail-in ballots can take days or weeks." }
+    ]
+  },
+  {
+    "id": "vote-counting",
+    "title": "How Votes Are Counted",
+    "description": "Explore hand counting, machine counting, observer roles, audits, and the recount process.",
+    "country": "ALL",
+    "order": 6,
+    "estimatedMinutes": 9,
+    "content": [
+      { "type": "heading", "text": "Counting Methods" },
+      { "type": "body", "text": "Votes can be counted by hand, by optical scanner, or by electronic tabulation. Many jurisdictions use a combination: electronic counting followed by hand audits of a sample to verify accuracy. The goal is always accuracy, transparency, and security." },
+      { "type": "heading", "text": "The Role of Observers" },
+      { "type": "body", "text": "Election observers from political parties, independent organizations, and international bodies watch the counting process. Their presence ensures transparency and deters manipulation. Observers can challenge procedures but cannot interfere with the count." },
+      { "type": "heading", "text": "Audits and Verification" },
+      { "type": "body", "text": "Post-election audits verify that vote counts are accurate. Risk-limiting audits (RLAs) use statistical methods to confirm results with high confidence. Many jurisdictions now mandate post-election audits as standard practice." },
+      { "type": "heading", "text": "Recounts" },
+      { "type": "body", "text": "Recounts occur when results are extremely close or when errors are suspected. They can be automatic (triggered by close margins) or requested by candidates. Recounts follow strict procedures to maintain ballot security and chain of custody." }
+    ],
+    "quizQuestions": [
+      { "id": "vc-q1", "question": "What is a risk-limiting audit (RLA)?", "type": "multiple-choice", "options": ["A security check on voting machines", "A statistical method to verify election results", "A candidate background check", "A financial audit of campaigns"], "correctAnswer": "A statistical method to verify election results", "explanation": "RLAs use statistics to provide strong evidence that the announced outcome matches the actual votes cast." },
+      { "id": "vc-q2", "question": "Who can serve as an election observer?", "type": "multiple-choice", "options": ["Only government officials", "Party representatives, independent and international observers", "Only judges", "Any citizen without registration"], "correctAnswer": "Party representatives, independent and international observers", "explanation": "Observers come from political parties, non-partisan organizations, and international election monitoring bodies." },
+      { "id": "vc-q3", "question": "True or False: Election observers can stop the counting process if they see irregularities.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "Observers can report concerns and file challenges, but they cannot directly stop or interfere with counting." },
+      { "id": "vc-q4", "question": "When is a recount typically triggered?", "type": "multiple-choice", "options": ["After every election", "When margins are extremely close", "When turnout is low", "When media requests it"], "correctAnswer": "When margins are extremely close", "explanation": "Recounts are usually triggered automatically by close margins or requested by candidates within a specific timeframe." },
+      { "id": "vc-q5", "question": "What is chain of custody in elections?", "type": "multiple-choice", "options": ["The order candidates appear on the ballot", "Tracking and securing ballots from casting through counting", "The line of voters at a polling station", "The succession of election commissioners"], "correctAnswer": "Tracking and securing ballots from casting through counting", "explanation": "Chain of custody ensures ballots are securely tracked at every stage to prevent tampering or loss." }
+    ]
+  },
+  {
+    "id": "election-security",
+    "title": "Election Security",
+    "description": "Learn about safeguards, cybersecurity, audits, chain of custody, and how elections are protected.",
+    "country": "ALL",
+    "order": 7,
+    "estimatedMinutes": 7,
+    "content": [
+      { "type": "heading", "text": "Physical Security" },
+      { "type": "body", "text": "Election security begins with physical safeguards: tamper-evident seals on ballot boxes, secure storage facilities, bipartisan teams handling ballots, surveillance cameras, and strict access controls at counting centers." },
+      { "type": "heading", "text": "Cybersecurity" },
+      { "type": "body", "text": "Election infrastructure faces cyber threats including hacking attempts on voter databases, disinformation campaigns, and attacks on election reporting systems. Defenses include network segmentation, multi-factor authentication, regular penetration testing, and air-gapped systems for vote tabulation." },
+      { "type": "heading", "text": "Paper Trails" },
+      { "type": "body", "text": "Voter-verified paper audit trails (VVPATs) provide a physical record of each electronic vote. This allows post-election audits to verify electronic results against paper records, serving as the gold standard for election security." },
+      { "type": "heading", "text": "International Standards" },
+      { "type": "body", "text": "Organizations like the OSCE, UN, and Carter Center establish international election standards. Free and fair elections require transparency, universal suffrage, ballot secrecy, and independent election administration." }
+    ],
+    "quizQuestions": [
+      { "id": "sec-q1", "question": "What is a VVPAT?", "type": "multiple-choice", "options": ["A voting app", "Voter-Verified Paper Audit Trail", "Virtual Vote Authentication Protocol", "Voter Validation And Testing"], "correctAnswer": "Voter-Verified Paper Audit Trail", "explanation": "VVPAT produces a paper record that voters can verify, enabling audits of electronic voting systems." },
+      { "id": "sec-q2", "question": "Why are air-gapped systems important for elections?", "type": "multiple-choice", "options": ["They cool the voting machines", "They prevent remote hacking by disconnecting from the internet", "They speed up counting", "They reduce costs"], "correctAnswer": "They prevent remote hacking by disconnecting from the internet", "explanation": "Air-gapped systems are not connected to any network, making remote cyberattacks impossible." },
+      { "id": "sec-q3", "question": "True or False: Tamper-evident seals can prevent all election fraud.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "Tamper-evident seals are one layer of security — election integrity requires multiple overlapping safeguards." },
+      { "id": "sec-q4", "question": "Which organization monitors international election standards?", "type": "multiple-choice", "options": ["FIFA", "OSCE (Organization for Security and Co-operation in Europe)", "WHO", "WTO"], "correctAnswer": "OSCE (Organization for Security and Co-operation in Europe)", "explanation": "The OSCE sends election observation missions worldwide and establishes democratic election standards." },
+      { "id": "sec-q5", "question": "What is the most effective defense against election disinformation?", "type": "multiple-choice", "options": ["Banning social media", "Media literacy and official information sources", "Restricting voting", "Eliminating electronic voting"], "correctAnswer": "Media literacy and official information sources", "explanation": "Educating voters to identify misinformation and directing them to official sources is the most effective defense." }
+    ]
+  },
+  {
+    "id": "after-the-election",
+    "title": "After the Election",
+    "description": "Understand results certification, transition of power, the electoral college process, and what happens next.",
+    "country": "ALL",
+    "order": 8,
+    "estimatedMinutes": 8,
+    "content": [
+      { "type": "heading", "text": "Results Certification" },
+      { "type": "body", "text": "After counting and any recounts, election authorities formally certify the results. This process involves canvassing boards reviewing tallies, resolving discrepancies, and issuing official certificates of election to winning candidates." },
+      { "type": "heading", "text": "Electoral College (US)" },
+      { "type": "body", "text": "In the United States, the Electoral College formally elects the president in December after the November election. Electors from each state cast their votes based on their state's popular vote results. Congress certifies the electoral vote count in January." },
+      { "type": "heading", "text": "Transition of Power" },
+      { "type": "body", "text": "The peaceful transfer of power is a cornerstone of democracy. Incoming leaders receive briefings, form cabinets, and prepare to govern. The outgoing administration cooperates to ensure continuity of government operations and national security." },
+      { "type": "heading", "text": "Contesting Results" },
+      { "type": "body", "text": "Candidates can legally challenge results through courts, requesting recounts or alleging irregularities. These legal processes have strict timelines and evidentiary requirements. Courts serve as the final arbiter of election disputes in democratic systems." }
+    ],
+    "quizQuestions": [
+      { "id": "ae-q1", "question": "What is the certification process?", "type": "multiple-choice", "options": ["Training election workers", "Formally confirming and declaring official results", "Registering new voters", "Setting up polling stations"], "correctAnswer": "Formally confirming and declaring official results", "explanation": "Certification is the official process of confirming vote tallies and declaring winners." },
+      { "id": "ae-q2", "question": "When does the US Electoral College formally vote?", "type": "multiple-choice", "options": ["Election Day in November", "December after the election", "January 1st", "Inauguration Day"], "correctAnswer": "December after the election", "explanation": "Electors meet in their state capitals in December to formally cast their electoral votes." },
+      { "id": "ae-q3", "question": "True or False: The peaceful transfer of power is guaranteed by law in all democracies.", "type": "true-false", "options": ["True", "False"], "correctAnswer": "False", "explanation": "While it's a democratic norm, the peaceful transfer depends on adherence to democratic principles and rule of law." },
+      { "id": "ae-q4", "question": "How can election results be legally challenged?", "type": "multiple-choice", "options": ["Through social media protests", "Through court filings with evidence", "By refusing to concede", "Through media pressure"], "correctAnswer": "Through court filings with evidence", "explanation": "Legal challenges require filing in appropriate courts with specific evidence within strict timelines." },
+      { "id": "ae-q5", "question": "What does a canvassing board do?", "type": "multiple-choice", "options": ["Campaigns for candidates", "Reviews and certifies vote tallies", "Paints campaign signs", "Conducts exit polls"], "correctAnswer": "Reviews and certifies vote tallies", "explanation": "Canvassing boards review vote counts, resolve discrepancies, and certify official results." }
+    ]
+  }
+]
