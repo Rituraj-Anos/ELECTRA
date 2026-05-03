@@ -12,6 +12,10 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
+/**
+ * @description Page component displaying all available learning modules
+ * @returns {JSX.Element} Learn page component
+ */
 export default function LearnPage() {
   const { country, completedModules } = useSessionStore();
   const [modules, setModules] = useState<LearningModule[]>([]);

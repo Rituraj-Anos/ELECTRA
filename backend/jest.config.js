@@ -6,6 +6,11 @@ module.exports = {
   testMatch: ['**/tests/**/*.test.ts'],
   setupFilesAfterEnv: ['<rootDir>/src/tests/setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  globals: {
+    'ts-jest': {
+      tsconfig: './tsconfig.test.json',
+    },
+  },
   collectCoverageFrom: [
     'src/**/*.ts',
     '!src/**/*.d.ts',
@@ -17,3 +22,4 @@ module.exports = {
   forceExit: true,
   detectOpenHandles: true,
 };
+

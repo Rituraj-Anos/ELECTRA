@@ -109,7 +109,7 @@ authRouter.post('/auth/login', (req: Request, res: Response) => {
   }
 
   // Find user by email
-  let foundUser: any = null;
+  let foundUser: { userId: string; email?: string; displayName?: string; authProvider: string } | null = null;
   for (const [, user] of userStore) {
     if (user.email === email) {
       foundUser = user;

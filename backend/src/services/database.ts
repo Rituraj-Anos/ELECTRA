@@ -43,8 +43,9 @@ export async function connectDB(): Promise<boolean> {
     });
 
     return true;
-  } catch (error: any) {
-    console.warn(`[MongoDB] Connection failed: ${error.message} — using in-memory stores`);
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : 'Unknown error';
+    console.warn(`[MongoDB] Connection failed: ${msg} — using in-memory stores`);
     return false;
   }
 }

@@ -16,6 +16,10 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
+/**
+ * @description The main scenarios simulation page component
+ * @returns {JSX.Element} Scenarios page component
+ */
 export default function ScenariosPage() {
   const [scenarios, setScenarios] = useState<Scenario[]>([]);
   const [loading, setLoading] = useState(true);
@@ -31,13 +35,18 @@ export default function ScenariosPage() {
       .finally(() => setLoading(false));
   }, []);
 
+  /**
+   * @description Submits a scenario for AI simulation and displays the analysis
+   * @param {string} scenarioText - The scenario description to simulate
+   * @returns {Promise<void>}
+   */
   async function handleSimulate(scenarioText: string) {
     setSelectedScenario(scenarioText);
     setSimulating(true);
     setAnalysis(null);
     try {
       const res = await simulateScenario(scenarioText);
-      setAnalysis(res.analysis || "No analysis available.");
+      setAnalysis(res.analysis || res.outcome || JSON.stringify(res) || "No analysis available.");
     } catch {
       setAnalysis("Simulation failed. Please try again.");
     } finally {

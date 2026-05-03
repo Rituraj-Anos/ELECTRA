@@ -17,6 +17,10 @@ const SUGGESTIONS = [
   "How does ranked-choice voting work?",
 ];
 
+/**
+ * @description The main chat interface page component
+ * @returns {JSX.Element} Chat page component
+ */
 export default function ChatPage() {
   const { messages, addMessage, appendToLastMessage, setStreaming, isStreaming } = useChatStore();
   const { sessionId, currentModule } = useSessionStore();
@@ -62,6 +66,10 @@ export default function ChatPage() {
     [isStreaming, messages, sessionId, currentModule, addMessage, appendToLastMessage, setStreaming],
   );
 
+  /**
+   * @description Handles keyboard events for the chat input
+   * @param {React.KeyboardEvent} e - Keyboard event
+   */
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -244,6 +252,11 @@ export default function ChatPage() {
   );
 }
 
+/**
+ * @description Component to render individual chat messages
+ * @param {{ message: Message }} props - The chat message props
+ * @returns {JSX.Element} Chat bubble component
+ */
 function ChatBubble({ message }: { message: Message }) {
   const isUser = message.role === "user";
   return (

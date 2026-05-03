@@ -19,6 +19,10 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
+/**
+ * @description Page component for finding polling locations by address
+ * @returns {JSX.Element} Polling page component
+ */
 export default function PollingPage() {
   const [address, setAddress] = useState("");
   const [locations, setLocations] = useState<PollingLocation[]>([]);
@@ -26,6 +30,10 @@ export default function PollingPage() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
+  /**
+   * @description Searches for polling locations based on the entered address
+   * @returns {Promise<void>}
+   */
   async function handleSearch() {
     if (!address.trim()) return;
     setLoading(true);

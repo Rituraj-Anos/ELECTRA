@@ -5,6 +5,10 @@ import { fetchGlossary } from "@/lib/api";
 import type { GlossaryTerm } from "@/lib/types";
 import { motion } from "motion/react";
 
+/**
+ * @description Page component displaying election/civic glossary terms with search
+ * @returns {JSX.Element} Glossary page component
+ */
 export default function GlossaryPage() {
   const [terms, setTerms] = useState<GlossaryTerm[]>([]);
   const [search, setSearch] = useState("");

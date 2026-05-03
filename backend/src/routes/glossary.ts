@@ -12,6 +12,10 @@ export const glossaryRouter = Router();
 
 let glossaryData: any[] = [];
 
+/**
+ * @description Loads glossary term data from the JSON file on startup
+ * @returns {void}
+ */
 function loadGlossary(): void {
   try {
     const dataPath = path.join(__dirname, '..', 'data', 'glossary.json');

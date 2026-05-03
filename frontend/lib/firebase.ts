@@ -24,6 +24,10 @@ let authReady: Promise<User> = new Promise((resolve, reject) => {
   });
 });
 
+/**
+ * @description Retrieves the Firebase authentication token
+ * @returns {Promise<string | null>} The auth token or null if failed
+ */
 export async function getAuthToken(): Promise<string | null> {
   try {
     const user = await authReady;

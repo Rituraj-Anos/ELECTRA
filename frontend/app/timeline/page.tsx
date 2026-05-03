@@ -12,6 +12,10 @@ const CAT_COLORS: Record<string, string> = {
   voting: "var(--success)", counting: "#8B5CF6", certification: "#EC4899",
 };
 
+/**
+ * @description Page component showing an election timeline for the user's country
+ * @returns {JSX.Element} Timeline page component
+ */
 export default function TimelinePage() {
   const { country } = useSessionStore();
   const [events, setEvents] = useState<TimelineEvent[]>([]);

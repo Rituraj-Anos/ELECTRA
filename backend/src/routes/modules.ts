@@ -14,6 +14,10 @@ export const modulesRouter = Router();
 
 let modulesData: any[] = [];
 
+/**
+ * @description Loads module data from the JSON file on startup
+ * @returns {void}
+ */
 function loadModules(): void {
   try {
     const dataPath = path.join(__dirname, '..', 'data', 'modules.json');

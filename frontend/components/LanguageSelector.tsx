@@ -66,6 +66,10 @@ export default function LanguageSelector() {
 
   // Close on outside click
   useEffect(() => {
+    /**
+     * @description Closes the dropdown when clicking outside
+     * @param {MouseEvent} e - Mouse click event
+     */
     function handleClickOutside(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setIsOpen(false);
@@ -82,6 +86,10 @@ export default function LanguageSelector() {
       l.code.toLowerCase().includes(search.toLowerCase())
   );
 
+  /**
+   * @description Selects a language and updates the session store
+   * @param {string} code - Language code to select
+   */
   function selectLanguage(code: string) {
     setSession({ language: code });
     setIsOpen(false);

@@ -18,6 +18,10 @@ const item = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] as const } },
 };
 
+/**
+ * @description Page component for voter readiness checklist tracking
+ * @returns {JSX.Element} Checklist page component
+ */
 export default function ChecklistPage() {
   const { sessionId } = useSessionStore();
   const [items, setItems] = useState<ChecklistItem[]>([]);
@@ -36,6 +40,11 @@ export default function ChecklistPage() {
       .finally(() => setLoading(false));
   }, [userId]);
 
+  /**
+   * @description Toggles the completion state of a checklist item
+   * @param {string} itemId - The ID of the checklist item to toggle
+   * @returns {Promise<void>}
+   */
   async function handleToggle(itemId: string) {
     try {
       const res = await updateChecklist(userId, itemId);
