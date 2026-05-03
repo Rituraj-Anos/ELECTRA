@@ -6,7 +6,7 @@
 # ELECTRA
 ### AI-Powered Election Education Assistant
 
-*Your step-by-step guide to every vote that matters.*
+Your step-by-step guide to every vote that matters.
 
 <br/>
 

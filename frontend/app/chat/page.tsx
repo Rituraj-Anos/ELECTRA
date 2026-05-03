@@ -5,6 +5,8 @@ import { useChatStore, useSessionStore } from "@/lib/store";
 import { streamChat } from "@/lib/api";
 import type { Message } from "@/lib/types";
 import { motion, AnimatePresence } from "motion/react";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const SUGGESTIONS = [
   "How do I register to vote?",
@@ -252,23 +254,62 @@ function ChatBubble({ message }: { message: Message }) {
       style={{ display: "flex", justifyContent: isUser ? "flex-end" : "flex-start" }}
     >
       <div
-        style={{
+        style={isUser ? {
           maxWidth: "75%",
           padding: "var(--sp-sm) var(--sp-md)",
-          borderRadius: isUser
-            ? "var(--r-xl) var(--r-xl) var(--r-sm) var(--r-xl)"
-            : "var(--r-xl) var(--r-xl) var(--r-xl) var(--r-sm)",
-          background: isUser ? "var(--accent)" : "var(--bg-white)",
-          color: isUser ? "white" : "var(--text-heading)",
-          border: isUser ? "none" : "1px solid var(--border-light)",
+          borderRadius: "var(--r-xl) var(--r-xl) var(--r-sm) var(--r-xl)",
+          background: "var(--accent)",
+          color: "white",
           fontSize: "var(--text-sm)",
           lineHeight: 1.7,
           whiteSpace: "pre-wrap",
           wordBreak: "break-word",
-          boxShadow: isUser ? "0 4px 12px rgba(232,56,13,0.2)" : "var(--shadow-sm)",
+          boxShadow: "0 4px 12px rgba(232,56,13,0.2)",
+        } : {
+          maxWidth: '80%',
+          background: 'white',
+          borderRadius: '16px',
+          padding: '16px 20px',
+          boxShadow: '0 2px 12px rgba(13,13,13,0.08)',
+          lineHeight: '1.7',
+          fontSize: '0.95rem'
         }}
       >
-        {message.content}
+        {isUser ? (
+          message.content
+        ) : (
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              strong: ({children}) => (
+                <strong style={{fontWeight: 700, color: '#0B0E1A'}}>{children}</strong>
+              ),
+              ol: ({children}) => (
+                <ol style={{paddingLeft: '1.25rem', marginTop: '0.5rem', 
+                  marginBottom: '0.5rem', display: 'flex', flexDirection: 'column', 
+                  gap: '0.4rem'}}>{children}</ol>
+              ),
+              ul: ({children}) => (
+                <ul style={{paddingLeft: '1.25rem', marginTop: '0.5rem', 
+                  marginBottom: '0.5rem', display: 'flex', flexDirection: 'column', 
+                  gap: '0.4rem'}}>{children}</ul>
+              ),
+              li: ({children}) => (
+                <li style={{lineHeight: '1.6', color: '#1A1A1A'}}>{children}</li>
+              ),
+              p: ({children}) => (
+                <p style={{marginBottom: '0.6rem', lineHeight: '1.7', 
+                  color: '#1A1A1A'}}>{children}</p>
+              ),
+              h3: ({children}) => (
+                <h3 style={{fontWeight: 700, fontSize: '1rem', marginBottom: '0.4rem', 
+                  color: '#0B0E1A'}}>{children}</h3>
+              ),
+            }}
+          >
+            {message.content}
+          </ReactMarkdown>
+        )}
       </div>
     </motion.div>
   );
