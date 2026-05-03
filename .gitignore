@@ -44,3 +44,8 @@ frontend/stitch-skills/
 frontend/motion/
 frontend/ui-ux-pro-max-skill/
 frontend/impeccable/
+
+# Internal Planning
+CLAUDE.md
+ELECTION_ASSISTANT_MASTER_PRD.md
+PRD_PART*.md
