@@ -71,7 +71,7 @@ export default function PollingPage() {
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
-                src={`https://www.google.com/maps/embed/v1/search?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}&q=polling+station+near+${encodeURIComponent(address)}&zoom=14`}
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(address)}&output=embed`}
               ></iframe>
             </div>
 

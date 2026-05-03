@@ -1,5 +1,5 @@
 import { initializeApp, getApps } from "firebase/app";
-import { getAuth, signInAnonymously } from "firebase/auth";
+import { getAuth, signInAnonymously, User } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,18 +10,26 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-const app =
-  getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 export const auth = getAuth(app);
+
+let authReady: Promise<User> = new Promise((resolve, reject) => {
+  const unsubscribe = auth.onAuthStateChanged((user) => {
+    unsubscribe();
+    if (user) {
+      resolve(user);
+    } else {
+      signInAnonymously(auth).then((cred) => resolve(cred.user)).catch(reject);
+    }
+  });
+});
 
 export async function getAuthToken(): Promise<string | null> {
   try {
-    if (!auth.currentUser) {
-      await signInAnonymously(auth);
-    }
-    return await auth.currentUser!.getIdToken();
+    const user = await authReady;
+    return await user.getIdToken(true);
   } catch (err) {
-    console.error("[Firebase] Auth failed:", err);
+    console.error("[Firebase] getAuthToken failed:", err);
     return null;
   }
 }
