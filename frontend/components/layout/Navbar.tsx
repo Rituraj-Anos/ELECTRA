@@ -11,6 +11,8 @@ const NAV_ITEMS = [
   { name: "Chat", href: "/chat" },
   { name: "Timeline", href: "/timeline" },
   { name: "Glossary", href: "/glossary" },
+  { name: "Checklist", href: "/checklist" },
+  { name: "Scenarios", href: "/scenarios" },
 ];
 
 export default function Navbar() {

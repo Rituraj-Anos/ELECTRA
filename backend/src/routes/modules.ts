@@ -6,6 +6,7 @@
 import { Router, Request, Response } from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCached, setCached } from '../services/cache';
 
 export const modulesRouter = Router();
 
@@ -34,6 +35,13 @@ loadModules();
  */
 modulesRouter.get('/modules', (_req: Request, res: Response) => {
   const { country, level } = _req.query;
+  const cacheKey = `modules_${country || 'all'}_${level || 'all'}`;
+
+  const cached = getCached<any>(cacheKey);
+  if (cached) {
+    res.json(cached);
+    return;
+  }
 
   let filtered = [...modulesData];
 
@@ -53,7 +61,9 @@ modulesRouter.get('/modules', (_req: Request, res: Response) => {
   // Sort by order
   filtered.sort((a, b) => a.order - b.order);
 
-  res.json({ modules: filtered });
+  const result = { modules: filtered };
+  setCached(cacheKey, result, 3600);
+  res.json(result);
 });
 
 /**

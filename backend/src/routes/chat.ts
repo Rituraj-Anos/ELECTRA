@@ -10,9 +10,15 @@ import { authMiddleware } from '../middleware/auth';
 import { chatRateLimiter } from '../middleware/rateLimit';
 import { sanitizeInput, sanitizeSessionId } from '../middleware/sanitize';
 import * as firestoreService from '../services/firestore';
+import { analyzeSentiment } from '../services/sentiment';
 
 export const chatRouter = Router();
 
+/**
+ * @description POST /api/chat — Stream AI responses via Server-Sent Events.
+ * Validates input, sanitizes messages, builds context from session,
+ * and streams Groq AI response tokens to the client.
+ */
 chatRouter.post('/chat', authMiddleware, chatRateLimiter, async (req: Request, res: Response) => {
   const { messages, sessionId, language, moduleContext } = req.body;
 
@@ -67,6 +73,10 @@ chatRouter.post('/chat', authMiddleware, chatRateLimiter, async (req: Request, r
     }
   }
 
+  // ─── Analyze Sentiment ──────────────────────────────────────────────────────
+  const lastUserMessage = sanitizedMessages[sanitizedMessages.length - 1]?.content || '';
+  const sentiment = analyzeSentiment(lastUserMessage);
+
   // ─── Stream Response ───────────────────────────────────────────────────────
   let fullResponse = '';
 
@@ -76,8 +86,8 @@ chatRouter.post('/chat', authMiddleware, chatRateLimiter, async (req: Request, r
       res.write(`data: ${JSON.stringify({ token })}\n\n`);
     });
 
-    // Signal completion
-    res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
+    // Signal completion with sentiment data
+    res.write(`data: ${JSON.stringify({ done: true, sentiment })}\n\n`);
     res.end();
 
     // Save conversation to Firestore (non-blocking)

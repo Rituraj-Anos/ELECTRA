@@ -6,6 +6,7 @@
 import { Router, Request, Response } from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCached, setCached } from '../services/cache';
 
 export const glossaryRouter = Router();
 
@@ -31,6 +32,13 @@ loadGlossary();
  */
 glossaryRouter.get('/glossary', (_req: Request, res: Response) => {
   const { search, category } = _req.query;
+  const cacheKey = `glossary_${search || 'all'}_${category || 'all'}`;
+
+  const cached = getCached<any>(cacheKey);
+  if (cached) {
+    res.json(cached);
+    return;
+  }
 
   let filtered = [...glossaryData];
 
@@ -49,7 +57,9 @@ glossaryRouter.get('/glossary', (_req: Request, res: Response) => {
 
   filtered.sort((a, b) => (a.term || '').localeCompare(b.term || ''));
 
-  res.json({ terms: filtered });
+  const result = { terms: filtered };
+  setCached(cacheKey, result, 86400);
+  res.json(result);
 });
 
 /**

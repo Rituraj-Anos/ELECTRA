@@ -126,3 +126,43 @@ export function synthesizeSpeech(text: string, lang?: string) {
     body: JSON.stringify({ text, languageCode: lang || "en-US" }),
   });
 }
+
+/* ── Checklist ── */
+export function fetchChecklist(userId: string) {
+  return apiFetch(`/checklist/${userId}`);
+}
+export function updateChecklist(userId: string, itemId: string, completed?: boolean) {
+  return apiFetch("/checklist/update", {
+    method: "POST",
+    body: JSON.stringify({ userId, itemId, completed }),
+  });
+}
+
+/* ── Journey ── */
+export function fetchJourney(userId: string, country?: string, level?: string) {
+  const params = new URLSearchParams();
+  if (country) params.set("country", country);
+  if (level) params.set("level", level);
+  return apiFetch(`/journey/${userId}?${params.toString()}`);
+}
+
+/* ── Scenarios ── */
+export function fetchScenarios() {
+  return apiFetch("/scenarios");
+}
+export function simulateScenario(scenario: string, country?: string) {
+  return apiFetch("/scenario", {
+    method: "POST",
+    body: JSON.stringify({ scenario, country }),
+  });
+}
+
+/* ── Analytics ── */
+export function fetchAnalytics(userId: string) {
+  return apiFetch(`/analytics/insights/${userId}`);
+}
+
+/* ── Languages ── */
+export function fetchLanguages() {
+  return apiFetch("/languages");
+}

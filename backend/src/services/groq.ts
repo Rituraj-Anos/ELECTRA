@@ -39,6 +39,23 @@ function getClient(): Groq {
 
 const MODEL = 'llama-3.3-70b-versatile';
 
+/**
+ * @description Strip markdown symbols from AI response for clean display.
+ * Converts **heading** to heading, * bullet to bullet points.
+ * @param {string} text - Raw AI response text
+ * @returns {string} Cleaned response without markdown symbols
+ */
+export function cleanResponse(text: string): string {
+  if (!text || typeof text !== 'string') return text;
+  return text
+    .replace(/^\*\*(.+?)\*\*\s*$/gm, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*([^*\n]+)\*/g, '$1')
+    .replace(/^\*\s+/gm, '• ')
+    .replace(/\*\*/g, '')
+    .trim();
+}
+
 // ─── System Prompt Builder ─────────────────────────────────────────────────────
 
 /**

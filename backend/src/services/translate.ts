@@ -14,11 +14,11 @@ export interface TranslationResult {
 // ─── Supported Languages ───────────────────────────────────────────────────────
 
 export const SUPPORTED_LANGUAGES = [
+  // ─── International Languages ──────────────────────────────────────────────
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'es', name: 'Spanish', flag: '🇪🇸' },
   { code: 'fr', name: 'French', flag: '🇫🇷' },
   { code: 'de', name: 'German', flag: '🇩🇪' },
-  { code: 'hi', name: 'Hindi', flag: '🇮🇳' },
   { code: 'zh', name: 'Chinese', flag: '🇨🇳' },
   { code: 'ja', name: 'Japanese', flag: '🇯🇵' },
   { code: 'ko', name: 'Korean', flag: '🇰🇷' },
@@ -34,6 +34,29 @@ export const SUPPORTED_LANGUAGES = [
   { code: 'th', name: 'Thai', flag: '🇹🇭' },
   { code: 'id', name: 'Indonesian', flag: '🇮🇩' },
   { code: 'uk', name: 'Ukrainian', flag: '🇺🇦' },
+  // ─── 22 Official Indian Languages (Eighth Schedule) ───────────────────────
+  { code: 'hi', name: 'Hindi', flag: '🇮🇳' },
+  { code: 'bn', name: 'Bengali', flag: '🇮🇳' },
+  { code: 'te', name: 'Telugu', flag: '🇮🇳' },
+  { code: 'mr', name: 'Marathi', flag: '🇮🇳' },
+  { code: 'ta', name: 'Tamil', flag: '🇮🇳' },
+  { code: 'gu', name: 'Gujarati', flag: '🇮🇳' },
+  { code: 'kn', name: 'Kannada', flag: '🇮🇳' },
+  { code: 'ml', name: 'Malayalam', flag: '🇮🇳' },
+  { code: 'pa', name: 'Punjabi', flag: '🇮🇳' },
+  { code: 'or', name: 'Odia', flag: '🇮🇳' },
+  { code: 'as', name: 'Assamese', flag: '🇮🇳' },
+  { code: 'ur', name: 'Urdu', flag: '🇮🇳' },
+  { code: 'sa', name: 'Sanskrit', flag: '🇮🇳' },
+  { code: 'ne', name: 'Nepali', flag: '🇮🇳' },
+  { code: 'ks', name: 'Kashmiri', flag: '🇮🇳' },
+  { code: 'sd', name: 'Sindhi', flag: '🇮🇳' },
+  { code: 'kok', name: 'Konkani', flag: '🇮🇳' },
+  { code: 'mai', name: 'Maithili', flag: '🇮🇳' },
+  { code: 'doi', name: 'Dogri', flag: '🇮🇳' },
+  { code: 'mni', name: 'Manipuri', flag: '🇮🇳' },
+  { code: 'sat', name: 'Santali', flag: '🇮🇳' },
+  { code: 'bo', name: 'Bodo', flag: '🇮🇳' },
 ] as const;
 
 /**

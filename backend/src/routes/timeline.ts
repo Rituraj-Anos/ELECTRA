@@ -6,6 +6,7 @@
 import { Router, Request, Response } from 'express';
 import * as fs from 'fs';
 import * as path from 'path';
+import { getCached, setCached } from '../services/cache';
 
 export const timelineRouter = Router();
 
@@ -40,27 +41,37 @@ timelineRouter.get('/timeline', (req: Request, res: Response) => {
 
   const countryUpper = country.toUpperCase();
   const type = (electionType as string) || 'presidential';
+  const cacheKey = `timeline_${countryUpper}_${type}`;
+
+  const cached = getCached<any>(cacheKey);
+  if (cached) {
+    res.json(cached);
+    return;
+  }
 
   // Look up timeline data
   const key = `${countryUpper}_${type}`;
   const timelineEvents = timelinesData[key] || timelinesData[`${countryUpper}_general`] || [];
 
   if (timelineEvents.length === 0) {
-    // Return a generic timeline structure
-    res.json({
+    const result = {
       country: countryUpper,
       electionType: type,
       events: getGenericTimeline(type),
       note: 'This is a generic timeline. Country-specific data may not be available.',
-    });
+    };
+    setCached(cacheKey, result, 3600);
+    res.json(result);
     return;
   }
 
-  res.json({
+  const result = {
     country: countryUpper,
     electionType: type,
     events: timelineEvents,
-  });
+  };
+  setCached(cacheKey, result, 3600);
+  res.json(result);
 });
 
 /**
