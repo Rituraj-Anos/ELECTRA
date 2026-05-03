@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useUIStore } from "@/lib/store";
 import { useState, useEffect } from "react";
+import LanguageSelector from "@/components/LanguageSelector";
 
 const NAV_ITEMS = [
   { name: "Dashboard", href: "/" },
@@ -131,6 +132,10 @@ export default function Navbar() {
               </Link>
             );
           })}
+          
+          {/* Language selector */}
+          <LanguageSelector />
+          
           <Link
             href="/polling"
             className="btn btn-secondary"

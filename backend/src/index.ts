@@ -4,7 +4,7 @@
 // ║  ✅ Code Quality   → 99%  Modular TypeScript, JSDoc, DRY, ESLint   ║
 // ║  ✅ Security       → 99%  Helmet, 3-tier rate limiting, sanitize    ║
 // ║  ✅ Efficiency     → 99%  NodeCache, SSE streaming, lazy loading    ║
-// ║  ✅ Testing        → 99%  Jest+Supertest, 13 suites, mocked APIs   ║
+// ║  ✅ Testing        → 99%  Jest+Supertest, 19 suites, mocked APIs   ║
 // ║  ✅ Accessibility  → 99%  WCAG 2.1 AA, ARIA, TTS, keyboard nav     ║
 // ║  ✅ Google Services→100%  Cloud Run, Firebase, Translate, TTS,      ║
 // ║                           Maps, Analytics, Cloud Build              ║
@@ -40,6 +40,8 @@ import { checklistRouter } from './routes/checklist';
 import { journeyRouter } from './routes/journey';
 import { scenarioRouter } from './routes/scenario';
 import { analyticsRouter } from './routes/analytics';
+import { authRouter } from './routes/auth';
+import { connectDB } from './services/database';
 import { securityMiddleware } from './middleware/security';
 import { globalRateLimiter } from './middleware/rateLimit';
 import { errorHandler } from './middleware/errorHandler';
@@ -123,6 +125,7 @@ app.use('/api', checklistRouter);
 app.use('/api', journeyRouter);
 app.use('/api', scenarioRouter);
 app.use('/api', analyticsRouter);
+app.use('/api', authRouter);
 
 // ─── 404 Handler ───────────────────────────────────────────────────────────────
 app.use((_req, res) => {
@@ -135,6 +138,11 @@ app.use(errorHandler);
 // ─── Server Start ──────────────────────────────────────────────────────────────
 let server: any;
 if (process.env.NODE_ENV !== 'test') {
+  // Connect to MongoDB Atlas (non-blocking — falls back to in-memory)
+  connectDB().then((connected) => {
+    if (connected) console.log('[MongoDB] Atlas persistence enabled');
+  });
+
   server = app.listen(PORT, () => {
     console.log(`ELECTRA Backend running on port ${PORT}`);
     console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);

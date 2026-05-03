@@ -166,3 +166,39 @@ export function fetchAnalytics(userId: string) {
 export function fetchLanguages() {
   return apiFetch("/languages");
 }
+
+/* ── Auth ── */
+export function registerUser(email: string, password: string, displayName?: string, country?: string) {
+  return apiFetch("/auth/register", {
+    method: "POST",
+    body: JSON.stringify({ email, password, displayName, country }),
+  });
+}
+
+export function loginUser(email: string, password: string) {
+  return apiFetch("/auth/login", {
+    method: "POST",
+    body: JSON.stringify({ email, password }),
+  });
+}
+
+export function googleAuth(firebaseUid: string, email?: string, displayName?: string, photoURL?: string) {
+  return apiFetch("/auth/google", {
+    method: "POST",
+    body: JSON.stringify({ firebaseUid, email, displayName, photoURL }),
+  });
+}
+
+export function getMe(jwtToken: string) {
+  return apiFetch("/auth/me", {
+    headers: { Authorization: `Bearer ${jwtToken}` },
+  });
+}
+
+export function completeProfile(jwtToken: string, data: { displayName?: string; country?: string; state?: string; knowledgeLevel?: string; language?: string }) {
+  return apiFetch("/auth/complete-profile", {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${jwtToken}` },
+    body: JSON.stringify(data),
+  });
+}
